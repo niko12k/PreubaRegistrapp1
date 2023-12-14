@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Formulario de Registro</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title">¡Registra tu asistencia!</ion-title>
+    <p class="subTitle">Por el momento, puedes registrar tu asistencia de forma manual ingresando los datos que se solicitan</p>
+  </div>
+
+  <form [formGroup]="registroForm" (ngSubmit)="guardarRegistro()">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input formControlName="codigoClase" placeholder="Código de la clase" class="input"></ion-input>
+      </ion-item>
+      <div *ngIf="registroForm.controls['codigoClase'].touched && registroForm.controls['codigoClase'].invalid">
+        <ion-text *ngIf="registroForm.controls['codigoClase'].hasError('required')">
+          El código de la clase es obligatorio
+        </ion-text>
+      </div>
+      
+      <ion-item>
+        <ion-input formControlName="nombre" placeholder="Nombre del estudiante" class="input"></ion-input>
+      </ion-item>
+      <div *ngIf="registroForm.controls['nombre'].touched && registroForm.controls['nombre'].invalid">
+        <ion-text *ngIf="registroForm.controls['nombre'].hasError('required')">
+          El nombre es obligatorio
+        </ion-text>
+      </div>
+
+      <!-- Esto asume que ya tienes el correo del usuario en tu componente -->
+      <input type="hidden">
+
+      <!-- Agrega un campo oculto para guardar la fecha y hora de inicio de sesión -->
+      <input type="hidden" formControlName="fechaHoraInicioSesion" value="{{ fechaHoraInicioSesion }}">
+
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" style="margin-bottom:30px;">
+      <ion-fab-button (click)="guardarRegistro()" [disabled]="!registroForm.valid">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+</ion-content>

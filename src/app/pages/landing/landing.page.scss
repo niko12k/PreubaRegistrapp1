@@ -1,0 +1,33 @@
+ion-content {
+    --background: rgb(3,43,68,255);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ajusta el tamaño del contenedor */
+  }
+
+ion-title{
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20%;
+}
+
+ion-card{
+    margin-top: 40%;
+    padding-top: 5%;
+    border-radius: 10px;
+    padding-bottom: 10%;
+}
+
+.centered-label {
+  text-align: center;
+  display: block;
+}
+
+ion-img {
+  max-width: 100%; /* Asegura que la imagen mantenga su tamaño máximo */
+  max-height: 100%; /* Asegura que la imagen mantenga su tamaño máximo */
+}

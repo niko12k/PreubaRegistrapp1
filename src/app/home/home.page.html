@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="padding-left: 10px;">RegistrApp</ion-title>
+    <ion-text class="cerrar" slot="end" (click)="logout()" style="margin-right: 10px;">Cerrar sesión</ion-text>
+  </ion-toolbar>
+</ion-header>
+
+  
+  <div class="contenedorMain">
+
+    <ion-content >
+  
+            <ion-content [style.visibility]="content_visibility">
+
+              <img src="assets/home2.jpg" alt="Banner" style="width: 100%; max-width: 100%; height: auto;">
+  
+  
+              <div class="header">
+                <div id="container" style="padding: 0 20px;">
+                  <h1 style="font-size: 2em;">¡Bienvenido/a!</h1>
+                  <p class="subTitle">Recuerda registrar tu asistencia al llegar a tu sala de clases.</p>
+                </div>
+              </div>
+              
+  
+              <ion-button expand="block" class="ion-margin" (click)="startScan()">
+                Scanear Codigo QR
+              </ion-button>
+
+              <ion-button expand="block" class="ion-margin custom-margin" routerLink="/formulario">
+                Registro manual de asistencia
+              </ion-button>
+            
+              <ion-button expand="block" class="ion-margin " routerLink="/api">
+                API Rick and Morty
+              </ion-button>
+   
+              <div class="signupLink">
+                <p>¿Tienes un problema? <a style="color:#FFC33F" href="https://experienciavivo.duoc.cl/alumnos" target="_blank">Contacta a soporte</a></p>
+              </div>
+
+            </ion-content>
+
+    </ion-content>
+  
+  </div>

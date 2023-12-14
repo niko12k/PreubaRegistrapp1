@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-label class="centered-label" style="font-size: larger;">{{ fechaHoraInicioSesion }}</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-img src="assets/nuevo2.png" style="margin-top: 70px;" [routerLink]="['/login']"></ion-img>
+
+  <ion-fab vertical="bottom" horizontal="end" style="margin-bottom: 30px;">
+    <ion-fab-button color="light" [routerLink]="['/login']" class="button-white">
+      <ion-icon name="chevron-forward"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
